@@ -3,6 +3,7 @@ package com.example.projetointegrador;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Paint;
 import android.hardware.Sensor;
@@ -14,7 +15,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements SensorEventListener {
+public class MainActivity extends Activity implements SensorEventListener {
 
     Sensor sensor;
     SensorManager sensorManager;
