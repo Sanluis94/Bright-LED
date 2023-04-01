@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat;
 class Game extends SurfaceView implements SurfaceHolder.Callback {
     private final Joystick joystick;
     private GameLoop gameLoop ;
+    private MainActivity mainActivity;
     private Context context;
     private final Player player;
 
@@ -73,6 +74,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         super.draw(canvas);
         drawUPS(canvas);
         drawFPS(canvas);
+        drawLumenValue(canvas);
 
         joystick.draw(canvas);
         player.draw(canvas);
@@ -97,6 +99,17 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         paint.setColor(color);
         paint.setTextSize(20);
         canvas.drawText("FPS: "+averageFPS, 100,200,paint);
+
+    }
+
+    public void drawLumenValue(Canvas canvas){
+
+        String lumenValue = mainActivity.getLumenValue();
+        Paint paint = new Paint();
+        int color = ContextCompat.getColor(getContext(),R.color.red);
+        paint.setColor(color);
+        paint.setTextSize(20);
+        canvas.drawText("FPS: "+lumenValue, 100,200,paint);
 
     }
 
