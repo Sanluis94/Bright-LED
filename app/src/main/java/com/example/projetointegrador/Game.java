@@ -109,7 +109,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         int color = ContextCompat.getColor(getContext(),R.color.red);
         paint.setColor(color);
         paint.setTextSize(20);
-        canvas.drawText("FPS: "+lumenValue, 100,200,paint);
+        canvas.drawText("FPS: "+lumenValue, 100,300,paint);
 
     }
 
