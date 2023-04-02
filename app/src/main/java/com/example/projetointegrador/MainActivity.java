@@ -17,22 +17,20 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements SensorEventListener {
 
-    String lumenValue;
+    double lumenValue;
     Sensor sensor;
     SensorManager sensorManager;
-
-    TextView sampleText;
 
     Window window = getWindow();
 
     private SensorEventListener sensorListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
-            lumenValue = String.valueOf(event.values[0]);
+            lumenValue = (double)event.values[0];
         }
 
         @Override
-        public void onAccuracyChanged(Sensor sensor, int acuracy) {
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
         }
     };
@@ -71,7 +69,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 
     }
 
-    public String getLumenValue(){
+    public double getLumenValue(){
 
         return lumenValue;
     }
