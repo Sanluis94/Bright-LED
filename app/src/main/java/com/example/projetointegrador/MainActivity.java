@@ -62,8 +62,7 @@ public class MainActivity extends Activity  implements SensorEventListener {
                 sensorValues = 30;
             case 40:
                 sensorValues = 40;
-        };
-
+        }
     }
 
     @Override
