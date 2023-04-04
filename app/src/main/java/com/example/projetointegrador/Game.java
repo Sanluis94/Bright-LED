@@ -104,7 +104,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
 
     public void drawLumenValue(Canvas canvas){
 
-        String lumenValue =  Double.toString(mainActivity.getLumenValue());
+        String lumenValue =  Integer.toString(mainActivity.getSensorValues());
         Paint paint = new Paint();
         int color = ContextCompat.getColor(getContext(),R.color.red);
         paint.setColor(color);

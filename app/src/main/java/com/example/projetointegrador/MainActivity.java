@@ -15,25 +15,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements SensorEventListener {
+public class MainActivity extends Activity  implements SensorEventListener {
 
-    double lumenValue;
     Sensor sensor;
     SensorManager sensorManager;
-
+    int sensorValues;
     Window window = getWindow();
 
-    private SensorEventListener sensorListener = new SensorEventListener() {
-        @Override
-        public void onSensorChanged(SensorEvent event) {
-            lumenValue = (double)event.values[0];
-        }
-
-        @Override
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,34 +31,49 @@ public class MainActivity extends Activity implements SensorEventListener {
         sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
+
         setContentView(new Game(this));
 
     }
 
     @Override
-    public void onResume(){
+    protected void onResume() {
         super.onResume();
-        sensorManager.registerListener(sensorListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this,sensor,SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
-    public void onPause(){
+    protected void onPause(){
         super.onPause();
-        sensorManager.unregisterListener(sensorListener);
+        sensorManager.unregisterListener(this);
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
 
+        switch((int)event.values[0]){
+            case 0:
+                sensorValues = 0;
+            case 10:
+                sensorValues = 10;
+            case 20:
+                sensorValues = 20;
+            case 30:
+                sensorValues = 30;
+            case 40:
+                sensorValues = 40;
+        };
+
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy){
+    public void onAccuracyChanged(Sensor sensor, int i) {
 
     }
 
-    public double getLumenValue(){
+    public int getSensorValues(){
 
-        return lumenValue;
+        return sensorValues;
+
     }
 }
