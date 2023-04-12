@@ -19,7 +19,11 @@ public class MainActivity extends Activity  implements SensorEventListener {
 
     Sensor sensor;
     SensorManager sensorManager;
+<<<<<<< HEAD
     int sensorValues;
+=======
+    double sensorValues;
+>>>>>>> 59c2e2a70653cb2e357d6230beb02319a3817a82
     Window window = getWindow();
 
 
@@ -32,7 +36,11 @@ public class MainActivity extends Activity  implements SensorEventListener {
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
 
+<<<<<<< HEAD
         setContentView(new Game(this));
+=======
+        setContentView(new Game(this, this));
+>>>>>>> 59c2e2a70653cb2e357d6230beb02319a3817a82
 
     }
 
@@ -51,6 +59,7 @@ public class MainActivity extends Activity  implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
 
+<<<<<<< HEAD
         switch((int)event.values[0]){
             case 0:
                 sensorValues = 0;
@@ -63,14 +72,26 @@ public class MainActivity extends Activity  implements SensorEventListener {
             case 40:
                 sensorValues = 40;
         }
+=======
+        sensorValues = (double)event.values[0];
+
+>>>>>>> 59c2e2a70653cb2e357d6230beb02319a3817a82
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
 
+<<<<<<< HEAD
     }
 
     public int getSensorValues(){
+=======
+
+
+    }
+
+    public double getSensorValues(){
+>>>>>>> 59c2e2a70653cb2e357d6230beb02319a3817a82
 
         return sensorValues;
 
