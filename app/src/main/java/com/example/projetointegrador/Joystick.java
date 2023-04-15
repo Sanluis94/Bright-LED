@@ -31,7 +31,7 @@ public class Joystick {
     private double actuatorX;
     private double actuatorY;
 
-    public Joystick(int centerPositionX, int centerPositionY, int outerCircleRadius, int innerCircleRadius){
+    public Joystick(int centerPositionX, int centerPositionY, int outerCircleRadius, int innerCircleRadius) {
 
         outerCircleCenterPositionX = centerPositionX;
         outerCircleCenterPositionY = centerPositionY;
@@ -52,7 +52,6 @@ public class Joystick {
     }
 
 
-
     public void draw(Canvas canvas) {
 
         canvas.drawCircle(outerCircleCenterPositionX, outerCircleCenterPositionY, outerCircleRadius, outerCirclePaint);
@@ -67,14 +66,14 @@ public class Joystick {
 
     private void updateInnerCirclePosition() {
 
-        innerCircleCenterPositionX = (int)(outerCircleCenterPositionX + actuatorX * outerCircleRadius);
-        innerCircleCenterPositionY = (int)(outerCircleCenterPositionY + actuatorY * outerCircleRadius);
+        innerCircleCenterPositionX = (int) (outerCircleCenterPositionX + actuatorX * outerCircleRadius);
+        innerCircleCenterPositionY = (int) (outerCircleCenterPositionY + actuatorY * outerCircleRadius);
 
     }
 
     public boolean isPressed(double touchPositionX, double touchPositionY) {
 
-        joystickCenterToTouchDistance = Math.sqrt(Math.pow(outerCircleCenterPositionX - touchPositionX, 2) + Math.pow(outerCircleCenterPositionY -touchPositionY, 2));
+        joystickCenterToTouchDistance = Math.sqrt(Math.pow(outerCircleCenterPositionX - touchPositionX, 2) + Math.pow(outerCircleCenterPositionY - touchPositionY, 2));
 
         return joystickCenterToTouchDistance < outerCircleRadius;
 
@@ -96,17 +95,16 @@ public class Joystick {
 
         double deltaX = touchPositionX - outerCircleCenterPositionX;
         double deltaY = touchPositionY - outerCircleCenterPositionY;
-        double deltaDistance = Math.sqrt(Math.pow(deltaX,2) + Math.pow(deltaY,2));
+        double deltaDistance = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
 
-        if (deltaDistance < outerCircleRadius){
-            actuatorX = deltaX/outerCircleRadius;
-            actuatorY = deltaY/outerCircleRadius;
+        if (deltaDistance < outerCircleRadius) {
+            actuatorX = deltaX / outerCircleRadius;
+            actuatorY = deltaY / outerCircleRadius;
 
-        }
-        else{
+        } else {
 
-            actuatorX = deltaX/deltaDistance;
-            actuatorY = deltaY/deltaDistance;
+            actuatorX = deltaX / deltaDistance;
+            actuatorY = deltaY / deltaDistance;
 
         }
 
@@ -126,4 +124,5 @@ public class Joystick {
     public double getActuatorY() {
         return actuatorY;
     }
+}
     

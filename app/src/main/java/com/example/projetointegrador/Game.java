@@ -15,11 +15,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
     private Context context;
     private final Player player;
 
-
-    public Game(Context context) {
-
-
-        public Game(Context context,MainActivity mainActivity) {
+    public Game(Context context,MainActivity mainActivity) {
 
         super(context);
 
@@ -119,6 +115,15 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         canvas.drawText("Valor do Lumen: "+lumenValue, 100,300,paint);
 
     }
+
+        public void fov(Canvas canvas){
+
+            Paint paint2 = new Paint();
+            int color = ContextCompat.getColor(context,R.color.white);
+            paint2.setColor(color);
+            canvas.drawCircle(player.getPositionX(), player.getPositionY(), 60*(float)mainActivity.getSensorValues(),paint2);
+
+        }
 
     public void update() {
 

@@ -48,4 +48,14 @@ public class Player {
         this.positionY = positionY;
 
     }
+    public float getPositionX(){
+
+        return (float)positionX;
+
+    }
+    public float getPositionY(){
+
+        return (float)positionY;
+
+    }
 }

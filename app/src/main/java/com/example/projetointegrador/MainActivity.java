@@ -33,9 +33,6 @@ public class MainActivity extends Activity  implements SensorEventListener {
         sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
-
-        setContentView(new Game(this));
-
         setContentView(new Game(this, this));
 
     }
@@ -61,8 +58,6 @@ public class MainActivity extends Activity  implements SensorEventListener {
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
-
-
     }
 
 
