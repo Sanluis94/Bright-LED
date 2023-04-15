@@ -28,7 +28,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
 
         joystick = new Joystick(275,700,70,40);
 
-        player = new Player(context,2*500,500,30);
+        player = new Player(context,2*500,500,30,mainActivity);
 
         setFocusable(true);
     }
@@ -114,15 +114,6 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         paint.setColor(color);
         paint.setTextSize(20);
         canvas.drawText("Valor do Lumen: "+lumenValue, 100,300,paint);
-
-    }
-
-    public void fov(Canvas canvas){
-
-        Paint paint2 = new Paint();
-        int color = ContextCompat.getColor(context,R.color.white);
-        paint2.setColor(color);
-        canvas.drawCircle(player.getPositionX(), player.getPositionY(), 60*(float)mainActivity.getSensorValues(),paint2);
 
     }
 
