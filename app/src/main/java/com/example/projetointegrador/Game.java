@@ -79,6 +79,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         drawFPS(canvas);
         drawLumenValue(canvas);
 
+        fov(canvas);
         joystick.draw(canvas);
         player.draw(canvas);
     }
@@ -116,14 +117,14 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
 
     }
 
-        public void fov(Canvas canvas){
+    public void fov(Canvas canvas){
 
-            Paint paint2 = new Paint();
-            int color = ContextCompat.getColor(context,R.color.white);
-            paint2.setColor(color);
-            canvas.drawCircle(player.getPositionX(), player.getPositionY(), 60*(float)mainActivity.getSensorValues(),paint2);
+        Paint paint2 = new Paint();
+        int color = ContextCompat.getColor(context,R.color.white);
+        paint2.setColor(color);
+        canvas.drawCircle(player.getPositionX(), player.getPositionY(), 60*(float)mainActivity.getSensorValues(),paint2);
 
-        }
+    }
 
     public void update() {
 
