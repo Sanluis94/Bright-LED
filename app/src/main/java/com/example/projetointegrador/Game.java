@@ -78,8 +78,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         drawUPS(canvas);
         drawFPS(canvas);
         drawLumenValue(canvas);
-
-        fov(canvas);
+        
         joystick.draw(canvas);
         player.draw(canvas);
     }
