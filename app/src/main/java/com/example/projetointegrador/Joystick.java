@@ -1,10 +1,9 @@
 package com.example.projetointegrador;
 
-<<<<<<< HEAD
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-=======
+
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -14,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
->>>>>>> 59c2e2a70653cb2e357d6230beb02319a3817a82
+
 
 public class Joystick {
 
@@ -127,32 +126,4 @@ public class Joystick {
     public double getActuatorY() {
         return actuatorY;
     }
-<<<<<<< HEAD
-=======
-
-    public static class howplay extends AppCompatActivity {
-
-        private Button voltarmenu;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.howplay);
-
-            voltarmenu = findViewById(R.id.voltarmenu);
-
-            //AO CLICAR NO BOTAO JOGAR
-            voltarmenu.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View view) {
-
-                    Intent intent = new Intent(howplay.this, InicioGame.class);
-                    startActivity(intent);
-
-                }
-            });
-        }
-    }
->>>>>>> 59c2e2a70653cb2e357d6230beb02319a3817a82
-}
+    

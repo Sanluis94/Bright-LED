@@ -15,21 +15,19 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
     private Context context;
     private final Player player;
 
-<<<<<<< HEAD
+
     public Game(Context context) {
-=======
-    public Game(Context context,MainActivity mainActivity) {
->>>>>>> 59c2e2a70653cb2e357d6230beb02319a3817a82
+
+
+        public Game(Context context,MainActivity mainActivity) {
+
         super(context);
 
         SurfaceHolder surfaceHolder = getHolder();
         surfaceHolder.addCallback(this);
 
-<<<<<<< HEAD
-=======
         this.mainActivity = mainActivity;
 
->>>>>>> 59c2e2a70653cb2e357d6230beb02319a3817a82
         gameLoop = new GameLoop(this, surfaceHolder);
 
         joystick = new Joystick(275,700,70,40);
@@ -113,11 +111,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
 
     public void drawLumenValue(Canvas canvas){
 
-<<<<<<< HEAD
-        String lumenValue =  Integer.toString(mainActivity.getSensorValues());
-=======
         String lumenValue =  Double.toString(mainActivity.getSensorValues());
->>>>>>> 59c2e2a70653cb2e357d6230beb02319a3817a82
         Paint paint = new Paint();
         int color = ContextCompat.getColor(getContext(),R.color.red);
         paint.setColor(color);
