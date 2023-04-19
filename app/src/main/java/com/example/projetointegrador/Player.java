@@ -6,6 +6,8 @@ import android.graphics.Paint;
 
 import androidx.core.content.ContextCompat;
 
+import com.example.projetointegrador.Sprite;
+
 public class Player {
 
     private static final double SPEED_PIXELS_PER_SECOND = 600.0;
@@ -18,26 +20,38 @@ public class Player {
     private double velocityX;
     private double velocityY;
     private MainActivity mainActivity;
+    private Sprite sprite;
 
-    public Player(Context context, double positionX, double positionY, double radius, MainActivity mainActivity){
+    public Player(Context context, double positionX, double positionY, double radius, MainActivity mainActivity, Sprite sprite){
 
         this.positionX = positionX;
         this.positionY = positionY;
         this.radius = radius;
         this.mainActivity = mainActivity;
-
+        this.sprite = sprite;
         paint = new Paint();
-        int color = ContextCompat.getColor(context,R.color.player);
+        int color = ContextCompat.getColor(context,R.color.black);
         paint.setColor(color);
-        paint2 = new Paint();
-        int color2 = ContextCompat.getColor(context,R.color.white);
-        paint2.setColor(color2);
+        paint.setAlpha(200);
+        paint.setStrokeWidth(1000);
+        paint.setStyle(Paint.Style.STROKE);
 
     }
 
-    public void draw(Canvas canvas) {
-        canvas.drawCircle((float)positionX, (float)positionY, (float)radius, paint);
-        canvas.drawCircle((float)positionX, (float)positionY, (float)radius*(float)mainActivity.getSensorValues(), paint2);
+    public void draw(Canvas canvas, GameDisplay gameDisplay) {
+
+        if(mainActivity.getSensorValues() >= 50){
+            canvas.drawCircle((float) gameDisplay.gameToDisplayCoordinatesX(getPositionX()) - sprite.getWidth()/2,(float) gameDisplay.gameToDisplayCoordinatesY(getPositionY()) - sprite.getHeight()/2,(float)radius*50,paint);
+        }
+        else{
+            canvas.drawCircle((float) gameDisplay.gameToDisplayCoordinatesX(getPositionX()) - sprite.getWidth()/2,(float) gameDisplay.gameToDisplayCoordinatesY(getPositionY()) - sprite.getHeight()/2,(float)radius*25,paint);
+        }
+
+        sprite.draw(
+                canvas,
+                (int) gameDisplay.gameToDisplayCoordinatesX(getPositionX()) - sprite.getWidth()/2,
+                (int) gameDisplay.gameToDisplayCoordinatesY(getPositionY()) - sprite.getHeight()/2
+        );
     }
 
     public void update(Joystick joystick) {
