@@ -5,14 +5,17 @@ import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Paint;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity  implements SensorEventListener {
@@ -21,6 +24,9 @@ public class MainActivity extends Activity  implements SensorEventListener {
     SensorManager sensorManager;
 
     double sensorValues;
+
+    private Button botaoInicio;
+    private Button comoJogar;
 
     Window window = getWindow();
 
@@ -33,7 +39,28 @@ public class MainActivity extends Activity  implements SensorEventListener {
         sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
-        setContentView(new Game(this, this));
+        botaoInicio = findViewById(R.id.botaoInicio);
+        comoJogar = findViewById(R.id.comojogar);
+
+        botaoInicio.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, Game.class);
+                startActivity(intent);
+
+            }
+        });
+
+        comoJogar.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, howplay.class);
+                startActivity(intent);
+            }
+        }));
 
     }
 
