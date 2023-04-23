@@ -24,7 +24,7 @@ public class howplay extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(howplay.this, InicioGame.class);
+                Intent intent = new Intent(howplay.this, MainActivity.class);
                 startActivity(intent);
 
             }

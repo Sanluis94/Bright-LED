@@ -47,8 +47,7 @@ public class MainActivity extends Activity  implements SensorEventListener {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, Game.class);
-                startActivity(intent);
+                setContentView(new Game(MainActivity.this,MainActivity.this));
 
             }
         });
