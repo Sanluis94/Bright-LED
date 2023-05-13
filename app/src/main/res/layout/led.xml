@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#292929">
+
+    <Button
+        android:id="@+id/ledVoltar"
+        android:layout_width="110dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#599F2D"
+        android:text="VOLTAR"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:cornerRadius="80sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="663dp"
+        android:layout_height="213dp"
+        android:text="Os LED são dispositivos semicondutores que emitem luz por eletroluminescência (passagem de corrente elétrica). Essa característica os difere das fontes de luz tradicionais."
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.757" />
+</androidx.constraintlayout.widget.ConstraintLayout>

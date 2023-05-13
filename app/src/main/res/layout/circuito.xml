@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E2021">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="299dp"
+        android:layout_height="415dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circuito" />
+
+    <Button
+        android:id="@+id/circuitoJogar"
+        android:layout_width="110dp"
+        android:layout_height="92dp"
+        android:backgroundTint="#C5C5C5"
+        android:text="Jogar"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:cornerRadius="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:strokeColor="#000000" />
+
+    <Button
+    android:id="@+id/circuitoVoltar"
+    android:layout_width="110dp"
+    android:layout_height="92dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:backgroundTint="#A12626"
+    android:text="VOLTAR"
+    android:textColor="#FFFFFF"
+    android:textSize="15sp"
+    app:cornerRadius="80sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:strokeColor="#000000" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

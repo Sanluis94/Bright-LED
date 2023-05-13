@@ -1,31 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#292929">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="COMO JOGAR ESTE JOGO"
-        android:textSize="24sp"
+        android:id="@+id/textView"
+        android:layout_width="336dp"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:text="Como jogar"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
         android:textStyle="bold"
-        android:gravity="center" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.108" />
 
     <Button
         android:id="@+id/voltarmenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_width="110dp"
+        android:layout_height="92dp"
+        android:backgroundTint="#C5C5C5"
         android:text="VOLTAR"
-        android:textSize="14sp" />
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:cornerRadius="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:strokeColor="#000000" />
 
-    <TextView
+    <Button
+        android:id="@+id/resistorAbrir"
+        android:layout_width="123dp"
+        android:layout_height="87dp"
+        android:backgroundTint="#2998C3"
+        android:text="Resistor"
+        app:cornerRadius="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.848"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/capacitorAbrir"
+        android:layout_width="123dp"
+        android:layout_height="87dp"
+        android:backgroundTint="#E1C61C"
+        android:text="Capacitor"
+        android:textColor="#000000"
+        app:cornerRadius="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.674"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.848"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/jumperAbrir"
+        android:layout_width="123dp"
+        android:layout_height="87dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#6206E1"
+        android:text="Jumper"
+        app:cornerRadius="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.848"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/ledAbrir"
+        android:layout_width="123dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="#599F2D"
+        android:text="Led"
+        app:cornerRadius="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.848"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/tutorialAbrir"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Para jogar este jogo você deve, com o que foi ensinado pela matéria X resolver os puzzles e adqurir em game energia para manter seu personagem vivo. "
+        android:layout_height="70dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#A12626"
+        android:text="Tutorial"
         android:textSize="24sp"
-        android:gravity="center" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

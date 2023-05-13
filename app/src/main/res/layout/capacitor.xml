@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#292929">
+
+    <Button
+
+        android:id="@+id/capacitorVoltar"
+        android:layout_width="110dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#E1C61C"
+        android:text="VOLTAR"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:cornerRadius="80sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#000000"
+    />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="698dp"
+        android:layout_height="203dp"
+        android:text="Os capacitores servem principalmente para armazenar cargas elétricas. Eles também são aplicáveis a circuitos alimentados por correntes elétricas alternadas, quando se deseja a formação de uma corrente elétrica contínua, no caso de eletrodomésticos como máquinas de lavar e geladeiras."
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.911" />
+</android.support.constraint.ConstraintLayout>
