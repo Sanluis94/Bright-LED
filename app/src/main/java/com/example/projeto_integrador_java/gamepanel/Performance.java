@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.projeto_integrador_java.GameLoop;
 import com.example.projeto_integrador_java.MainActivity;
-import com.example.projeto_integrador_java.R;
+import com.example.projetointegrador.R;
 
 public class Performance {
     private GameLoop gameLoop;

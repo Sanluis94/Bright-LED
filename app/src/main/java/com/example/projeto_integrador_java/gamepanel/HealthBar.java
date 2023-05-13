@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import androidx.core.content.ContextCompat;
 
 import com.example.projeto_integrador_java.GameDisplay;
-import com.example.projeto_integrador_java.R;
+import com.example.projetointegrador.R;
 import com.example.projeto_integrador_java.gameobject.Player;
 
 /**

@@ -11,7 +11,7 @@ import com.example.projeto_integrador_java.GameLoop;
 import com.example.projeto_integrador_java.MainActivity;
 import com.example.projeto_integrador_java.gamepanel.HealthBar;
 import com.example.projeto_integrador_java.gamepanel.Joystick;
-import com.example.projeto_integrador_java.R;
+import com.example.projetointegrador.R;
 import com.example.projeto_integrador_java.Utils;
 import com.example.projeto_integrador_java.graphics.Animator;
 import com.example.projeto_integrador_java.graphics.Sprite;

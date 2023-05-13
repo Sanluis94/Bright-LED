@@ -3,7 +3,7 @@ package com.example.projeto_integrador_java.gameobject;
 import android.content.Context;
 import androidx.core.content.ContextCompat;
 import com.example.projeto_integrador_java.GameLoop;
-import com.example.projeto_integrador_java.R;
+import com.example.projetointegrador.R;
 
 /**
  * Enemy is a character which always moves in the direction of the player.
