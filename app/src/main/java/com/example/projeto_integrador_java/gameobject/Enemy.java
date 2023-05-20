@@ -1,9 +1,14 @@
 package com.example.projeto_integrador_java.gameobject;
 
 import android.content.Context;
+import android.graphics.Canvas;
+
 import androidx.core.content.ContextCompat;
+
+import com.example.projeto_integrador_java.GameDisplay;
 import com.example.projeto_integrador_java.GameLoop;
-import com.example.projetointegrador.R;
+import com.example.projeto_integrador_java.R;
+import com.example.projeto_integrador_java.graphics.Sprite;
 
 /**
  * Enemy is a character which always moves in the direction of the player.
@@ -16,8 +21,11 @@ public class Enemy extends Circle {
     private static final double SPAWNS_PER_MINUTE = 20;
     private static final double SPAWNS_PER_SECOND = SPAWNS_PER_MINUTE/60.0;
     private static final double UPDATES_PER_SPAWN = GameLoop.MAX_UPS/SPAWNS_PER_SECOND;
+    float X;
+    float Y;
     private static double updatesUntilNextSpawn = UPDATES_PER_SPAWN;
     private Player player;
+    private Sprite sprite;
 
     public Enemy(Context context, Player player, double positionX, double positionY, double radius) {
         super(context, ContextCompat.getColor(context, R.color.enemy), positionX, positionY, radius);
@@ -29,7 +37,7 @@ public class Enemy extends Circle {
      * @param context
      * @param player
      */
-    public Enemy(Context context, Player player) {
+    public Enemy(Context context, Player player, Sprite sprite) {
         super(
             context,
             ContextCompat.getColor(context, R.color.enemy),
@@ -38,6 +46,7 @@ public class Enemy extends Circle {
      30
         );
         this.player = player;
+        this.sprite = sprite;
     }
 
     /**
@@ -84,6 +93,18 @@ public class Enemy extends Circle {
         // =========================================================================================
         positionX += velocityX;
         positionY += velocityY;
+    }
+
+    public void draw(Canvas canvas, GameDisplay gameDisplay){
+        X = (int) gameDisplay.gameToDisplayCoordinatesX(positionX);
+        Y = (int) gameDisplay.gameToDisplayCoordinatesY(positionY);
+        sprite.draw(
+                canvas,
+                (int) X,
+                (int) Y
+
+        );
+
     }
 }
 

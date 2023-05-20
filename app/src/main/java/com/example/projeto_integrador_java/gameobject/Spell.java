@@ -4,7 +4,7 @@ import android.content.Context;
 import androidx.core.content.ContextCompat;
 
 import com.example.projeto_integrador_java.GameLoop;
-import com.example.projetointegrador.R;
+import com.example.projeto_integrador_java.R;
 
 public class Spell extends Circle {
     public static final double SPEED_PIXELS_PER_SECOND = 800.0;

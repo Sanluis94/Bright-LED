@@ -1,5 +1,7 @@
 package com.example.projeto_integrador_java.gamepanel;
 
+import static android.os.SystemClock.currentThreadTimeMillis;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -7,7 +9,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.projeto_integrador_java.GameLoop;
 import com.example.projeto_integrador_java.MainActivity;
-import com.example.projetointegrador.R;
+import com.example.projeto_integrador_java.R;
 
 public class Performance {
     private GameLoop gameLoop;
@@ -24,6 +26,7 @@ public class Performance {
         drawUPS(canvas);
         drawFPS(canvas);
         drawLumenValue(canvas);
+        drawTimer(canvas);
     }
     public void drawUPS(Canvas canvas) {
         String averageUPS = Double.toString(gameLoop.getAverageUPS());
@@ -51,6 +54,21 @@ public class Performance {
         paint.setTextSize(20);
         canvas.drawText("Valor do Lumen: "+lumenValue, 100,300,paint);
 
+    }
+    private int getSecondsText(){
+
+        int seconds = (int) ((currentThreadTimeMillis())*0.001);
+        return seconds;
+    }
+
+    public void drawTimer(Canvas canvas){
+
+        String timer = String.valueOf(getSecondsText());
+        Paint paint = new Paint();
+        int color = ContextCompat.getColor(context,R.color.red);
+        paint.setColor(color);
+        paint.setTextSize(60);
+        canvas.drawText("Timer: "+timer, 1000,100,paint);
     }
 
 }

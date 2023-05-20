@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 
-import com.example.projetointegrador.R;
+import com.example.projeto_integrador_java.R;
 
 public class SpriteSheet {
     private static final int SPRITE_WIDTH_PIXELS = 64;
@@ -19,8 +19,8 @@ public class SpriteSheet {
 
     }
 
-    public Sprite getPlayerSprite() {
-        return new Sprite(this, new Rect(0, 0, 64, 64));
+    public Sprite getEnemySprite() {
+        return new Sprite(this, new Rect(3*64, 0, 4*64, 64));
 
     }
     public Sprite[] getPlayerSpriteArray() {

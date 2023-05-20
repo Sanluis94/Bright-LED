@@ -3,6 +3,7 @@ package com.example.projeto_integrador_java;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -56,6 +57,8 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
     private GameDisplay gameDisplay;
     private MainActivity mainActivity;
 
+    private SpriteSheet spriteSheet;
+
     public Game(Context context, MainActivity mainActivity) {
         super(context);
 
@@ -73,7 +76,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         joystick = new Joystick(275, 700, 70, 40);
 
         // Initialize game objects
-        SpriteSheet spriteSheet = new SpriteSheet(context);
+        spriteSheet = new SpriteSheet(context);
         Animator animator = new Animator(spriteSheet.getPlayerSpriteArray());
         player = new Player(context, joystick, 2*500, 500, 32, animator,mainActivity);
 
@@ -152,6 +155,10 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas) {
         super.draw(canvas);
 
+        if (player.getHealthPoint() <= 0) {
+            gameOver.draw(canvas);
+        }
+
         // Draw Tilemap
         tilemap.draw(canvas, gameDisplay);
 
@@ -189,7 +196,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
 
         // Spawn enemy
         if(Enemy.readyToSpawn()) {
-            enemyList.add(new Enemy(getContext(), player));
+            enemyList.add(new Enemy(getContext(), player, spriteSheet.getEnemySprite()));
         }
 
         // Update states of all enemies
