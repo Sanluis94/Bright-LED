@@ -1,6 +1,7 @@
 package com.example.projeto_integrador_java.gamepanel;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.MotionEvent;
@@ -9,12 +10,13 @@ import android.view.SurfaceView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import com.example.projeto_integrador_java.Game;
 import com.example.projetointegrador.R;
 
 /**
  * GameOver is a panel which draws the text Game Over to the screen.
  */
-public class GameOver {
+public class GameOver extends AppCompatActivity {
     private Context context;
     private Paint paint;
 
@@ -67,9 +69,11 @@ public class GameOver {
 
         if (event.getAction() == MotionEvent.ACTION_UP) {
             if (isContinueButtonTouched(touchX, touchY)) {
-                showToast("Cliquei no btn Continue");
+                Intent intent = new Intent(GameOver.this, Game.class);
+                startActivity(intent);
             } else if (isMainMenuButtonTouched(touchX, touchY)) {
-                showToast("Cliquei no btn Main Menu");
+                Intent intent = new Intent(GameOver.this, Game.class);
+                startActivity(intent);
             }
         }
     }

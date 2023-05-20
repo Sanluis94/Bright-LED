@@ -39,7 +39,7 @@ import java.util.List;
  * Game manages all objects in the game and is responsible for updating all states and render all
  * objects to the screen
  */
-class Game extends SurfaceView implements SurfaceHolder.Callback {
+public class Game extends SurfaceView implements SurfaceHolder.Callback {
 
     private final Tilemap tilemap;
     private int joystickPointerId = 0;

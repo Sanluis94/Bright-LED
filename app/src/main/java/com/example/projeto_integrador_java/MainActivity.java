@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import com.example.projetointegrador.R;
 
 /**
  * MainActivity is the entry point to our application.
