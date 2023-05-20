@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import com.example.projeto_integrador_java.Game;
+import com.example.projeto_integrador_java.MainActivity;
 import com.example.projetointegrador.R;
 
 /**
@@ -72,7 +73,7 @@ public class GameOver extends AppCompatActivity {
                 Intent intent = new Intent(GameOver.this, Game.class);
                 startActivity(intent);
             } else if (isMainMenuButtonTouched(touchX, touchY)) {
-                Intent intent = new Intent(GameOver.this, Game.class);
+                Intent intent = new Intent(GameOver.this, MainActivity.class);
                 startActivity(intent);
             }
         }
