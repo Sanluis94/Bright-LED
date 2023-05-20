@@ -3,13 +3,10 @@ package com.example.projeto_integrador_java.gamepanel;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-
-
 import androidx.core.content.ContextCompat;
-
 import com.example.projeto_integrador_java.GameDisplay;
-import com.example.projeto_integrador_java.R;
 import com.example.projeto_integrador_java.gameobject.Player;
+import com.example.projetointegrador.R;
 
 /**
  * HealthBar display the players health to the screen

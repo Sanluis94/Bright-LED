@@ -10,10 +10,8 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import com.example.projeto_integrador_java.gameobject.Circle;
 import com.example.projeto_integrador_java.gameobject.Enemy;
 import com.example.projeto_integrador_java.gameobject.Player;
@@ -33,7 +31,6 @@ import com.example.projeto_integrador_java.gamepanel.Performance;
 import com.example.projeto_integrador_java.graphics.Animator;
 import com.example.projeto_integrador_java.graphics.SpriteSheet;
 import com.example.projeto_integrador_java.map.Tilemap;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

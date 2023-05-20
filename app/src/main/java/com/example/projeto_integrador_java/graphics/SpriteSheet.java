@@ -5,7 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 
-import com.example.projeto_integrador_java.R;
+import com.example.projetointegrador.R;
+
 
 public class SpriteSheet {
     private static final int SPRITE_WIDTH_PIXELS = 64;

@@ -11,10 +11,10 @@ import com.example.projeto_integrador_java.GameLoop;
 import com.example.projeto_integrador_java.MainActivity;
 import com.example.projeto_integrador_java.gamepanel.HealthBar;
 import com.example.projeto_integrador_java.gamepanel.Joystick;
-import com.example.projeto_integrador_java.R;
 import com.example.projeto_integrador_java.Utils;
 import com.example.projeto_integrador_java.graphics.Animator;
 import com.example.projeto_integrador_java.graphics.Sprite;
+import com.example.projetointegrador.R;
 
 /**
  * Player is the main character of the game, which the user can control with a touch joystick.
@@ -41,7 +41,7 @@ public class Player extends Circle {
         this.playerState = new PlayerState(this);
         this.mainActivity = mainActivity;
         paint = new Paint();
-        int color = ContextCompat.getColor(context,R.color.black);
+        int color = ContextCompat.getColor(context, R.color.black);
         paint.setColor(color);
         paint.setAlpha(200);
         paint.setStrokeWidth(1000);

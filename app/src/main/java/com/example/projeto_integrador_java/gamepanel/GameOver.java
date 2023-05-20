@@ -7,12 +7,9 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
-import com.example.projeto_integrador_java.R;
-
+import com.example.projetointegrador.R;
 
 /**
  * GameOver is a panel which draws the text Game Over to the screen.

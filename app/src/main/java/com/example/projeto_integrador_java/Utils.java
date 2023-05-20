@@ -1,5 +1,4 @@
 package com.example.projeto_integrador_java;
-
 public class Utils {
 
     /**
