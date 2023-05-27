@@ -5,6 +5,7 @@ import static android.os.SystemClock.currentThreadTimeMillis;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+
 import androidx.core.content.ContextCompat;
 
 import com.example.projeto_integrador_java.GameLoop;
@@ -55,20 +56,28 @@ public class Performance {
         canvas.drawText("Valor do Lumen: "+lumenValue, 100,300,paint);
 
     }
-    private int getSecondsText(){
 
-        int seconds = (int) ((currentThreadTimeMillis())*0.001);
+    private int getSecondsText() {
+
+        int seconds = 0;
+        while (mainActivity.getPlayer().getHealthPoint() > 0) {
+            seconds = 0;
+            seconds = (int) ((currentThreadTimeMillis()) * 0.001);
+            if (mainActivity.getPlayer().getHealthPoint() <= 0) {
+                break;
+            }
+        }
         return seconds;
     }
 
-    public void drawTimer(Canvas canvas){
 
-        String timer = String.valueOf(getSecondsText());
-        Paint paint = new Paint();
-        int color = ContextCompat.getColor(context,R.color.red);
-        paint.setColor(color);
-        paint.setTextSize(60);
-        canvas.drawText("Timer: "+timer, 1000,100,paint);
+    public void drawTimer(Canvas canvas) {
+            String timer = String.valueOf(getSecondsText());
+            Paint paint = new Paint();
+            int color = ContextCompat.getColor(context, R.color.red);
+            paint.setColor(color);
+            paint.setTextSize(60);
+            canvas.drawText("Timer: " + timer, 1000, 100, paint);
+
     }
-
 }

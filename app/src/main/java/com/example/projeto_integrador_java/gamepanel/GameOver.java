@@ -1,15 +1,16 @@
 package com.example.projeto_integrador_java.gamepanel;
 
+import static android.os.SystemClock.currentThreadTimeMillis;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.os.SystemClock;
 import android.view.MotionEvent;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
-import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.core.content.ContextCompat;
+
 import com.example.projeto_integrador_java.Game;
 import com.example.projeto_integrador_java.MainActivity;
 import com.example.projetointegrador.R;
@@ -17,10 +18,11 @@ import com.example.projetointegrador.R;
 /**
  * GameOver is a panel which draws the text Game Over to the screen.
  */
-public class GameOver extends AppCompatActivity {
+public class GameOver {
     private Context context;
     private Paint paint;
 
+    private int time = (int) ((currentThreadTimeMillis())*0.001) ;
     public GameOver(Context context) {
         this.context = context;
         paint = new Paint();
@@ -28,20 +30,19 @@ public class GameOver extends AppCompatActivity {
 
     public void draw(Canvas canvas) {
         drawGameOver(canvas);
-        drawContinue(canvas);
         drawMainMenu(canvas);
+        drawTimeSurvived(canvas);
+
     }
 
     private void drawGameOver(Canvas canvas) {
         // Code for drawing the "Game Over" text
-    }
+        String text = "Game Over";
 
-    private void drawContinue(Canvas canvas) {
-        String text = "Continue";
+        float x = 800;
+        float y = 200;
 
-        float x = 1400;
-        float y = 450;
-
+        Paint paint = new Paint();
         int color = ContextCompat.getColor(context, R.color.gameOver);
         paint.setColor(color);
         float textSize = 150;
@@ -49,12 +50,11 @@ public class GameOver extends AppCompatActivity {
 
         canvas.drawText(text, x, y, paint);
     }
-
     private void drawMainMenu(Canvas canvas) {
         String text = "Main Menu";
 
-        float x = 1400;
-        float y = 650;
+        float x = 800;
+        float y = 800;
 
         int color = ContextCompat.getColor(context, R.color.gameOver);
         paint.setColor(color);
@@ -64,44 +64,46 @@ public class GameOver extends AppCompatActivity {
         canvas.drawText(text, x, y, paint);
     }
 
+    private void drawTimeSurvived(Canvas canvas) {
+        // Code for drawing the "Game Over" text
+        String text = "Time survided: ";
+        String timePassed = String.valueOf(getTimePassed());
+
+        float x = 800;
+        float y = 500;
+
+        Paint paint = new Paint();
+        int color = ContextCompat.getColor(context, R.color.gameOver);
+        paint.setColor(color);
+        float textSize = 100;
+        paint.setTextSize(textSize);
+
+        canvas.drawText(text + timePassed, x, y, paint);
+    }
     public void handleTouchEvent(MotionEvent event) {
         float touchX = event.getX();
         float touchY = event.getY();
 
         if (event.getAction() == MotionEvent.ACTION_UP) {
-            if (isContinueButtonTouched(touchX, touchY)) {
-                Intent intent = new Intent(GameOver.this, Game.class);
-                startActivity(intent);
-            } else if (isMainMenuButtonTouched(touchX, touchY)) {
-                Intent intent = new Intent(GameOver.this, MainActivity.class);
-                startActivity(intent);
+            if (isMainMenuButtonTouched(touchX, touchY)) {
+                Intent intent = new Intent(context, MainActivity.class);
+                context.startActivity(intent);
             }
         }
     }
-
-    private boolean isContinueButtonTouched(float touchX, float touchY) {
-        // Define the boundaries of the Continue button
-        float buttonLeft = 1400;
-        float buttonTop = 450 - 150;
-        float buttonRight = 1400 + paint.measureText("Continue");
-        float buttonBottom = 450;
-
-        // Verifica se o texto pressionado está dentro do limite dos pixels
-        return touchX >= buttonLeft && touchX <= buttonRight && touchY >= buttonTop && touchY <= buttonBottom;
-    }
-
     private boolean isMainMenuButtonTouched(float touchX, float touchY) {
         // Define os limites do botão do Main Menu
-        float buttonLeft = 1400;
-        float buttonTop = 650 - 150;
-        float buttonRight = 1400 + paint.measureText("Main Menu");
-        float buttonBottom = 650;
+        float buttonLeft = 800;
+        float buttonTop = 800 - 150;
+        float buttonRight = 800 + paint.measureText("Main Menu");
+        float buttonBottom = 800;
 
         // Verifica se o toque de coordenadas estão dentro dos limites de pixels Main Menu
         return touchX >= buttonLeft && touchX <= buttonRight && touchY >= buttonTop && touchY <= buttonBottom;
     }
 
-    private void showToast(String message) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    private long getTimePassed(){
+        long timePassed = time;
+        return timePassed;
     }
 }

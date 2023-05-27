@@ -1,6 +1,5 @@
 package com.example.projeto_integrador_java;
 
-import android.animation.Animator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import com.example.projetointegrador.R;
 
 /**
  * MainActivity is the entry point to our application.
@@ -126,4 +124,6 @@ public class MainActivity extends Activity implements SensorEventListener {
         return sensorValues;
 
     }
+
+    public void getPlayer() {return ;}
 }
