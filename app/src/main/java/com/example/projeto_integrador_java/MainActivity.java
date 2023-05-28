@@ -124,6 +124,4 @@ public class MainActivity extends Activity implements SensorEventListener {
         return sensorValues;
 
     }
-
-    public void getPlayer() {return ;}
 }

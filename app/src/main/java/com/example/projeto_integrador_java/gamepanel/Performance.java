@@ -10,16 +10,19 @@ import androidx.core.content.ContextCompat;
 
 import com.example.projeto_integrador_java.GameLoop;
 import com.example.projeto_integrador_java.MainActivity;
-import com.example.projeto_integrador_java.R;
+import com.example.projeto_integrador_java.gameobject.Player;
+import com.example.projetointegrador.R;
 
 public class Performance {
     private GameLoop gameLoop;
     private Context context;
+    private Player player;
     private MainActivity mainActivity;
 
-    public Performance(Context context, GameLoop gameLoop, MainActivity mainActivity) {
+    public Performance(Context context, GameLoop gameLoop, Player player, MainActivity mainActivity) {
         this.context = context;
         this.gameLoop = gameLoop;
+        this.player = player;
         this.mainActivity = mainActivity;
     }
 
@@ -50,7 +53,7 @@ public class Performance {
 
         String lumenValue =  Double.toString(mainActivity.getSensorValues());
         Paint paint = new Paint();
-        int color = ContextCompat.getColor(context,R.color.red);
+        int color = ContextCompat.getColor(context, R.color.red);
         paint.setColor(color);
         paint.setTextSize(20);
         canvas.drawText("Valor do Lumen: "+lumenValue, 100,300,paint);
@@ -60,10 +63,10 @@ public class Performance {
     private int getSecondsText() {
 
         int seconds = 0;
-        while (mainActivity.getPlayer().getHealthPoint() > 0) {
+        while (player.getHealthPoint() > 0) {
             seconds = 0;
             seconds = (int) ((currentThreadTimeMillis()) * 0.001);
-            if (mainActivity.getPlayer().getHealthPoint() <= 0) {
+            if (player.getHealthPoint() <= 0) {
                 break;
             }
         }

@@ -3,13 +3,14 @@ package com.example.projeto_integrador_java;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.Color;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import com.example.projeto_integrador_java.gameobject.Circle;
 import com.example.projeto_integrador_java.gameobject.Enemy;
@@ -21,7 +22,15 @@ import com.example.projeto_integrador_java.gamepanel.Performance;
 import com.example.projeto_integrador_java.graphics.Animator;
 import com.example.projeto_integrador_java.graphics.SpriteSheet;
 import com.example.projeto_integrador_java.map.Tilemap;
-
+import com.example.projeto_integrador_java.gameobject.Enemy;
+import com.example.projeto_integrador_java.gameobject.Player;
+import com.example.projeto_integrador_java.gameobject.Spell;
+import com.example.projeto_integrador_java.gamepanel.GameOver;
+import com.example.projeto_integrador_java.gamepanel.Joystick;
+import com.example.projeto_integrador_java.gamepanel.Performance;
+import com.example.projeto_integrador_java.graphics.Animator;
+import com.example.projeto_integrador_java.graphics.SpriteSheet;
+import com.example.projeto_integrador_java.map.Tilemap;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -59,7 +68,6 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
         gameLoop = new GameLoop(this, surfaceHolder);
 
         // Initialize game panels
-        performance = new Performance(context, gameLoop,mainActivity);
         gameOver = new GameOver(context);
         joystick = new Joystick(275, 700, 70, 40);
 
@@ -67,6 +75,13 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
         spriteSheet = new SpriteSheet(context);
         Animator animator = new Animator(spriteSheet.getPlayerSpriteArray());
         player = new Player(context, joystick, 2*500, 500, 32, animator,mainActivity);
+
+        // Initialize game panels
+        performance = new Performance(context,gameLoop,player,mainActivity);
+        gameOver = new GameOver(context);
+        joystick = new Joystick(275, 700, 70, 40);
+
+        performance = new Performance(context,gameLoop,player,mainActivity);
 
         // Initialize display and center it around the player
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -82,6 +97,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         gameOver.handleTouchEvent(event);
+
         // Handle user input touch event actions
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
@@ -185,6 +201,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
         // Spawn enemy
         if(Enemy.readyToSpawn()) {
             enemyList.add(new Enemy(getContext(), player, spriteSheet.getEnemySprite()));
+            enemyList.add(new Enemy(getContext(), player, spriteSheet.getCapacitorSprite()));
         }
 
         // Update states of all enemies
@@ -194,7 +211,7 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
 
         // Update states of all spells
         while (numberOfSpellsToCast > 0) {
-            spellList.add(new Spell(getContext(), player));
+            spellList.add(new Spell(getContext(), spriteSheet.getSpellSprite(), player));
             numberOfSpellsToCast --;
         }
         for (Spell spell : spellList) {
