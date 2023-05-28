@@ -76,11 +76,6 @@ public class Game extends SurfaceView implements SurfaceHolder.Callback {
         Animator animator = new Animator(spriteSheet.getPlayerSpriteArray());
         player = new Player(context, joystick, 2*500, 500, 32, animator,mainActivity);
 
-        // Initialize game panels
-        performance = new Performance(context,gameLoop,player,mainActivity);
-        gameOver = new GameOver(context);
-        joystick = new Joystick(275, 700, 70, 40);
-
         performance = new Performance(context,gameLoop,player,mainActivity);
 
         // Initialize display and center it around the player
