@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.projeto_integrador_java.Game;
 import com.example.projeto_integrador_java.MainActivity;
-import com.example.projetointegrador.R;
+import com.example.projeto_integrador_java.R;
 
 /**
  * GameOver is a panel which draws the text Game Over to the screen.
@@ -31,7 +31,6 @@ public class GameOver {
     public void draw(Canvas canvas) {
         drawGameOver(canvas);
         drawMainMenu(canvas);
-        drawTimeSurvived(canvas);
 
     }
 
@@ -63,23 +62,6 @@ public class GameOver {
 
         canvas.drawText(text, x, y, paint);
     }
-
-    private void drawTimeSurvived(Canvas canvas) {
-        // Code for drawing the "Game Over" text
-        String text = "Time survided: ";
-        String timePassed = String.valueOf(getTimePassed());
-
-        float x = 800;
-        float y = 500;
-
-        Paint paint = new Paint();
-        int color = ContextCompat.getColor(context, R.color.gameOver);
-        paint.setColor(color);
-        float textSize = 100;
-        paint.setTextSize(textSize);
-
-        canvas.drawText(text + timePassed, x, y, paint);
-    }
     public void handleTouchEvent(MotionEvent event) {
         float touchX = event.getX();
         float touchY = event.getY();
@@ -100,10 +82,5 @@ public class GameOver {
 
         // Verifica se o toque de coordenadas estão dentro dos limites de pixels Main Menu
         return touchX >= buttonLeft && touchX <= buttonRight && touchY >= buttonTop && touchY <= buttonBottom;
-    }
-
-    private long getTimePassed(){
-        long timePassed = time;
-        return timePassed;
     }
 }

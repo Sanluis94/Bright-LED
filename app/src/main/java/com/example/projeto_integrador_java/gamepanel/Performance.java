@@ -10,26 +10,23 @@ import androidx.core.content.ContextCompat;
 
 import com.example.projeto_integrador_java.GameLoop;
 import com.example.projeto_integrador_java.MainActivity;
+import com.example.projeto_integrador_java.R;
 import com.example.projeto_integrador_java.gameobject.Player;
-import com.example.projetointegrador.R;
-
 public class Performance {
     private GameLoop gameLoop;
     private Context context;
-    private Player player;
     private MainActivity mainActivity;
 
-    public Performance(Context context, GameLoop gameLoop, Player player, MainActivity mainActivity) {
+    public Performance(Context context, GameLoop gameLoop, MainActivity mainActivity) {
         this.context = context;
         this.gameLoop = gameLoop;
-        this.player = player;
         this.mainActivity = mainActivity;
     }
 
     public void draw(Canvas canvas) {
-        drawUPS(canvas);
-        drawFPS(canvas);
-        drawLumenValue(canvas);
+        //drawUPS(canvas);
+        //drawFPS(canvas);
+        //drawLumenValue(canvas);
         drawTimer(canvas);
     }
     public void drawUPS(Canvas canvas) {
@@ -62,14 +59,7 @@ public class Performance {
 
     private int getSecondsText() {
 
-        int seconds = 0;
-        while (player.getHealthPoint() > 0) {
-            seconds = 0;
-            seconds = (int) ((currentThreadTimeMillis()) * 0.001);
-            if (player.getHealthPoint() <= 0) {
-                break;
-            }
-        }
+        int seconds = (int) ((currentThreadTimeMillis())*0.001);
         return seconds;
     }
 

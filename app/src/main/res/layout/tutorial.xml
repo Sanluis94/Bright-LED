@@ -10,26 +10,30 @@
         android:id="@+id/tutorialVoltar"
         android:layout_width="110dp"
         android:layout_height="92dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:backgroundTint="#A12626"
         android:text="VOLTAR"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:cornerRadius="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"
         app:strokeColor="#000000" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tutorial"
+        android:layout_width="676dp"
+        android:layout_height="223dp"
+        android:text="O jogador deve sobreviver a ondas de inimigos que andarão em direção ao LED, deve-se utilizar o joystick a esquerda para se mover, e atirar clicando na tela."
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67" />
 </androidx.constraintlayout.widget.ConstraintLayout>

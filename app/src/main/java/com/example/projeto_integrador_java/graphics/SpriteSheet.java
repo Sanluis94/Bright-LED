@@ -21,7 +21,7 @@ public class SpriteSheet {
     }
 
     public Sprite getEnemySprite() {
-        return new Sprite(this, new Rect(3*64, 0, 4*64, 64));
+        return new Sprite(this, new Rect(2*64, 3*64, 3*64, 4*64));
 
     }
 
@@ -38,6 +38,15 @@ public class SpriteSheet {
         spriteArray[0] = new Sprite(this, new Rect(0*64, 0, 1*64, 64));
         spriteArray[1] = new Sprite(this, new Rect(1*64, 0, 2*64, 64));
         spriteArray[2] = new Sprite(this, new Rect(2*64, 0, 3*64, 64));
+        spriteArray[3] = new Sprite(this, new Rect(4*64, 0, 4*64, 64));
+        spriteArray[4] = new Sprite(this, new Rect(5*64, 0, 5*64, 64));
+        spriteArray[5] = new Sprite(this, new Rect(6*64, 0, 6*64, 64));
+        spriteArray[6] = new Sprite(this, new Rect(7*64, 0, 7*64, 64));
+        spriteArray[7] = new Sprite(this, new Rect(8*64, 0, 8*64, 64));
+        spriteArray[8] = new Sprite(this, new Rect(9*64, 0, 9*64, 64));
+        spriteArray[9] = new Sprite(this, new Rect(10*64, 0, 10*64, 64));
+        spriteArray[10] = new Sprite(this, new Rect(11*64, 0, 11*64, 64));
+        spriteArray[11] = new Sprite(this, new Rect(12*64, 0, 12*64, 64));
         return spriteArray;
     }
 
