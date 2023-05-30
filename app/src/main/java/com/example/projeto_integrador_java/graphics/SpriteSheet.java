@@ -34,7 +34,7 @@ public class SpriteSheet {
         return new Sprite(this, new Rect(1*64, 3*64, 2*64, 4*64));
     }
     public Sprite[] getPlayerSpriteArray() {
-        Sprite[] spriteArray = new Sprite[3];
+        Sprite[] spriteArray = new Sprite[12];
         spriteArray[0] = new Sprite(this, new Rect(0*64, 0, 1*64, 64));
         spriteArray[1] = new Sprite(this, new Rect(1*64, 0, 2*64, 64));
         spriteArray[2] = new Sprite(this, new Rect(2*64, 0, 3*64, 64));

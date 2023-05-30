@@ -5,6 +5,7 @@ import static android.os.SystemClock.currentThreadTimeMillis;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.SystemClock;
 import android.view.MotionEvent;
@@ -29,6 +30,7 @@ public class GameOver {
     }
 
     public void draw(Canvas canvas) {
+        canvas.drawColor(Color.BLACK);
         drawGameOver(canvas);
         drawMainMenu(canvas);
 
@@ -38,7 +40,7 @@ public class GameOver {
         // Code for drawing the "Game Over" text
         String text = "Game Over";
 
-        float x = 800;
+        float x = 600;
         float y = 200;
 
         Paint paint = new Paint();
@@ -52,7 +54,7 @@ public class GameOver {
     private void drawMainMenu(Canvas canvas) {
         String text = "Main Menu";
 
-        float x = 800;
+        float x = 600;
         float y = 800;
 
         int color = ContextCompat.getColor(context, R.color.gameOver);
@@ -75,9 +77,9 @@ public class GameOver {
     }
     private boolean isMainMenuButtonTouched(float touchX, float touchY) {
         // Define os limites do botão do Main Menu
-        float buttonLeft = 800;
+        float buttonLeft = 600;
         float buttonTop = 800 - 150;
-        float buttonRight = 800 + paint.measureText("Main Menu");
+        float buttonRight = 600 + paint.measureText("Main Menu");
         float buttonBottom = 800;
 
         // Verifica se o toque de coordenadas estão dentro dos limites de pixels Main Menu
